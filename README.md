@@ -17,12 +17,12 @@ DOM
 -display history of inputs + solutions
 
 CLIENT
-capture inputs as an object and POST to server
-get history array from server & append to dom on submit
+-capture inputs as an object and POST to server
+-get history array from server & append to dom on submit
 
 
 SERVER
-GET inputs
-run inputs through functions + - * /
-respond 200
-history array
+-GET inputs
+-run inputs through functions + - * /
+-respond 200
+-history array
