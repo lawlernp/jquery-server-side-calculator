@@ -10,11 +10,11 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 
 DOM
-2 value inputs
-4 operation selector buttonsnpm
-submit button displaying an =
-clear button 'c' emptys input fields
-display history of inputs + solutions
+-2 value inputs
+-4 operation selector buttons
+-submit button displaying an =
+-clear button 'c' emptys input fields
+-display history of inputs + solutions
 
 CLIENT
 capture inputs as an object and POST to server
