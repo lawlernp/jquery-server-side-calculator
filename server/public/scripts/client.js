@@ -8,6 +8,7 @@ function onReady() {
     $('#buttonDivide').on('click', divide);
     $('#buttonSubmit').on('click', postToServer);
     $('#buttonClear').on('click', clearInputs)
+    appendHistory();
 
 }
 
@@ -57,23 +58,6 @@ function divide() {
     objectArray.push(object);
 };
 
-function postToServer() {
-    let objectToPost = calculation[calculation.length - 1];
-    $.ajax({
-        type: 'POST',
-        url: '/calculate',
-        data: {
-            objectToCalculate: objectToPost,
-        }
-    }).then(function () {
-        console.log('Equation POST to server at route /calculate');
-        getFromServer();
-        calculation.pop;
-        $('#firstNumber').val('');
-        $('#secondNumber').val('');
-        appendHistory();
-    });
-};
 
 function postToServer() {
     let objectToPost = objectArray[objectArray.length - 1];
@@ -81,17 +65,42 @@ function postToServer() {
         type: 'POST',
         url: '/calculate',
         data: {
-            objectArray: objectToPost,
+            objectToCalculate : objectToPost,
         }
     }).then(function () {
         console.log('Equation POST to server at route /calculate');
         getFromServer();
-        calculation.pop;
+        objectArray.pop;
         $('#inputFirst').val('');
         $('#inputSecond').val('');
         appendHistory();
     });
 };
+
+function getFromServer() {
+    $.ajax({
+        type: 'GET',
+        url: '/calculate'
+    }).then(function (value) {
+        $('#answer').empty();
+        $('#answer').append(value.answer);
+    })
+};
+
+function appendHistory() {
+    $.ajax({
+        type: 'GET',
+        url: '/history'
+    }).then(function (array) {
+        $('#containerHistory').empty();
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+            $('#containerHistory').append(`<li>${element.inputOne} ${element.operator} ${element.inputTwo} = ${element.answer}</li>`)
+        }
+    })
+};
+
+
 
 
 
