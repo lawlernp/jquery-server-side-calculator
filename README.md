@@ -1,28 +1,35 @@
-# Project Name
+# SERVER SIDE CALCULATOR
 
 [Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Here is a simple calculator GUI that allows one to add, subtract, multiply or divide 2 numbers.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+### Prerequisites
 
+- [Node.js](https://nodejs.org/en/)
+- express
+- body-parser
 
-DOM
--2 value inputs
--4 operation selector buttons
--submit button displaying an =
--clear button 'c' emptys input fields
--display history of inputs + solutions
+## Installation
 
-CLIENT
--capture inputs as an object and POST to server
--get history array from server & append to dom on submit
+- npm install express
+- npm install body-parser
+- fire up server
+- navigate to 'address':5000
 
+## Usage
+- input 2 values into input fields
+- click operator button
+- click submit submit
+- recieve results!!
 
-SERVER
--GET inputs
--run inputs through functions + - * /
--respond 200
--history array
+## Built With
+VSCode
+
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
+
+## Support
+If you have suggestions or issues, please email me at lawlernp@gmail.com
